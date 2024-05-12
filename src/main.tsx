@@ -11,9 +11,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <MainLayout>
-        <Outlet />
-      </MainLayout>
+      <Outlet />
     ),
     errorElement: (
       <MainLayout>
