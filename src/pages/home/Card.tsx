@@ -51,7 +51,7 @@ const Card = ({ data, startLocation }: any) => {
                                         startIndex = path.indexOf(startLocation);
                                     }
                                     return (
-                                        <div key={`${data.id}-${index}`} className="text-blue-600">
+                                        <div key={`${data.id}-${index}`} className="text-red-600">
                                             {index + 1}.&nbsp;
                                             {!isInShortestPath && "Teleport to "}
                                             {
