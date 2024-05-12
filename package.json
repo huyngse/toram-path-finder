@@ -1,5 +1,5 @@
 {
-  "homepage": "https://huyngse.github.io/toram-path-finder",
+  "homepage": "https://huyngse.github.io/toram-path-finder/",
   "name": "toram-path-finder",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +8,7 @@
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "tsc && vite build",
+    "build": "vite build --base=./",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

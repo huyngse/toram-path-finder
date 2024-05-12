@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import '@/styles/index.css'
 import { Provider } from 'react-redux'
 import { store } from './lib/redux/store'
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouterProvider, createHashRouter } from 'react-router-dom';
 import { LoginPage, HomePage, ErrorPage } from '@/pages';
 import MainLayout from './layouts/MainLayout'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: (
