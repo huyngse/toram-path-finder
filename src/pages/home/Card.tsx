@@ -4,7 +4,7 @@ import { toramRegions } from "@/data/regions"
 const Card = ({ data, startLocation }: any) => {
     const region = toramRegions.find(region => region.id == data.region);
     return (
-        <div className="shadow rounded-lg p-3">
+        <div className="shadow rounded-lg p-3 bg-blue-900">
             <div className="font-bold">
                 {data.name}
             </div>
@@ -29,7 +29,7 @@ const Card = ({ data, startLocation }: any) => {
                             {data.paths.map((path: any, index: number) => {
                                 if (startLocation == 0) {
                                     return (
-                                        <div key={`${data.id}-${index}`} className="text-blue-600">
+                                        <div key={`${data.id}-${index}`} className="text-red-600">
                                             {index + 1}.&nbsp;
                                             {
                                                 path.map((node: any, innerIndex: number) => {

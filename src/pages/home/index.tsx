@@ -38,33 +38,43 @@ const index = () => {
     return str === null || str.trim() === '';
   }
   return (
-    <div className="p-5">
-      <h1 className="mb-3 font-bold text-xl">
+    <div className="p-5 bg-blue-950 min-h-screen text-white">
+      <h1 className="mb-3 font-bold text-2xl text-center">
         Toram Path Finder
       </h1>
-      <p className="mb-2">From</p>
-      <Select
-        showSearch
-        onChange={handleChangeStartLocation}
-        style={{ width: 300 }}
-        placeholder="Choose your start location"
-        optionFilterProp="children"
-        filterOption={(input, option) => (option?.label ?? '').includes(input)}
-        filterSort={(optionA, optionB) =>
-          (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-        }
-        options={selectOptions}
-        className="mb-3"
-        defaultValue={0}
-      />
-      <p className="mb-2">To</p>
-      <Input placeholder="Enter name of the place" onChange={handleSearchChange} />
+      <hr className="my-5" />
+      <div className="grid grid-cols-2 gap-5">
+        <div className="col-span-2 md:col-span-1">
+          <p className="mb-2">From</p>
+          <Select
+            showSearch
+            onChange={handleChangeStartLocation}
+            style={{ width: "100%" }}
+            placeholder="Choose your start location"
+            optionFilterProp="children"
+            filterOption={(input, option) => (option?.label.toLowerCase() ?? '').includes(input.toLowerCase())}
+            filterSort={(optionA, optionB) =>
+              (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+            }
+            options={selectOptions}
+            className="mb-3"
+            defaultValue={0}
+          />
+        </div>
+        <div className="col-span-2 md:col-span-1">
+          <p className="mb-2">To</p>
+          <Input placeholder="Enter name of the place" onChange={handleSearchChange} />
+        </div>
+      </div>
+
+
+      <hr className="my-5" />
       <div className="flex flex-col gap-2">
         {
           searchResult.map((result: any) => {
             return (
               <div key={result.id}>
-                <Card data={result} startLocation={startLocation}/>
+                <Card data={result} startLocation={startLocation} />
               </div>
             )
           })
