@@ -10,7 +10,7 @@ export const handleApiError = (error: any) => {
   }
 };
 
-export const get = async (id: string) => {
+export const get = async () => {
   try {
     const { data } = await axiosClient.get(`/api/`);
     return { error: null, data: data, success: true };
